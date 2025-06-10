@@ -61,7 +61,8 @@ class Conta:
         elif valor > 0:
             self._saldo -= valor 
             print("\n@@@ Saque realizado com suesso !!!. @@@")
-            
+            return True        
+    
         else:
             print("\n@@@ Operação falhou !!! O valor informado é inválido. @@@")
             
@@ -69,4 +70,11 @@ class Conta:
     
     def depositar(self, valor):
         if valor > 0:
+            self._saldo += valor
+            print("\n Depósito realizado com sucesso !!!")
             
+        else:
+            print('\n@@@ Operação falhou! O valor informado é inválido. @@@')
+            return False
+        
+        return True
