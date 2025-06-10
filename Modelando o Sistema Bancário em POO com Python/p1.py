@@ -87,7 +87,7 @@ class ContaCorrente(Conta):
         
     def sacar(self, valor):
         numero_saques = len(
-            [ transacao for transacao in self.historico.transacoes if transacao ['tipo'] == Saque. __name__]
+            [ transacao for transacao in self.historico.transacoes if transacao ['tipo'] == "Saque"]
         )
         
         excedeu_limite = valor > self._limite 
@@ -102,4 +102,30 @@ class ContaCorrente(Conta):
         else:
             return super().sacar(valor)
         return False 
+
+    def __str__(self):
+        return f"""\
+            Agencia:\t{self.agencia}
+            C/C:\t\t{self.numeoro}                
+            Titular:\t{self.cliente.nome}
+        """
+class historico:
+    def __init__(self):
+        self.transacoes = []
+        
+    @property
+    def transacoes(self):
+        return self._transacoes
     
+    def adicionar_transacao(self, transacao):
+        self._transacoes.append(
+            {
+                'tipo': transacao.__class__.__name__,
+                'valor': transacao.valor,
+                'data': datetime.now().strftime
+                ("%d = %m=%Y %H:%M:%s"),
+            }
+        )
+        
+class:
+    pass
