@@ -109,6 +109,7 @@ class ContaCorrente(Conta):
             C/C:\t\t{self.numeoro}                
             Titular:\t{self.cliente.nome}
         """
+
 class historico:
     def __init__(self):
         self.transacoes = []
@@ -127,5 +128,5 @@ class historico:
             }
         )
         
-class:
+class Transacao(ABC):
     pass
